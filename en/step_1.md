@@ -1,59 +1,19 @@
-## Introduction
 
-Add project description here. What will learners be making? Broadly what skills will they be learning?
+`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
 
-### What you will make
+#### Usage
 
---- no-print ---
-Add instructions for interacting with the embedded content here.
+`numpy` is particularly handy for manipulating raw camera output:
 
-<div class="scratch-preview">
-  <iframe allowtransparency="true" width="485" height="402" src="https://scratch.mit.edu/projects/embed/160619869/?autostart=false" frameborder="0"></iframe>
-</div>
---- /no-print ---
+```python
+from picamzero import Camera
+import numpy as np
 
---- print-only ---
-![Complete project](images/showcase_static.png)
---- /print-only ---
+camera = Camera()
+image_as_array = camera.capture_array()
+red_channel = image_as_array[:, :, 0]
+```
 
---- collapse ---
----
-title: What you will need
----
-### Hardware
+#### Documentation
 
-+ A computer or tablet capable of running Scratch 3
-
-### Software
-
-+ Scratch 3 (either [online](https://scratch.mit.edu/){:target="_blank"} or [offline](https://scratch.mit.edu/download){:target="_blank"})
-+ Python 3
-+ This project can be completed in a web browser using [trinket.io](https://trinket.io/)
-
-### Downloads
-
-+ Download the project [starter file](https://rpf.io/p/en/projectName-go){:target="_blank"} if working offline
-
---- /collapse ---
-
---- collapse ---
----
-title: What you will learn
----
-
-+ Learning objective 1
-+ Learning objective 2
-+ Learning objective 3
-
---- /collapse ---
-
---- collapse ---
----
-title: Additional information for educators
----
-
-You can download the completed project [here](https://rpf.io/p/en/projectName-get){:target="_blank"}.
-
-If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/projectName/print){:target="_blank"}.
-
---- /collapse ---
+- [https://numpy.org/doc/stable/user/index.html](https://numpy.org/doc/stable/user/index.html)
