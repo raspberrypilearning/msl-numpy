@@ -1,17 +1,19 @@
 
-`numpy` is a general-purpose array processing library designed to efficiently manipulate large multidimensional arrays (e.g. matrices) of arbitrary records without sacrificing too much speed for small multidimensional arrays.
+`numpy` is a library designed to help with working with numbers in Python. It is used most often to do maths with large grids of numbers, which `numpy` calls "arrays".
 
 #### Usage
 
-`numpy` is particularly handy for manipulating raw camera output:
+You can use `numpy` to process the individual pixels in each camera image taken using `picamzero`'s `capture_array` function. For example, you could filter the image to only show the red channel:
 
 ```python
 from picamzero import Camera
 import numpy as np
+import PIL
 
 camera = Camera()
 image_as_array = camera.capture_array()
 red_channel = image_as_array[:, :, 0]
+Image.fromarray(red_channel).save("red-channel.jpg")
 ```
 
 #### Documentation
